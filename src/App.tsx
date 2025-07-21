@@ -1,4 +1,3 @@
-// src/App.tsx
 import React from 'react';
 import { BrowserRouter as Router } from 'react-router-dom';
 import Header from './components/Layout/Header';
@@ -15,7 +14,7 @@ import Contact from './components/Sections/Contact';
 const App: React.FC = () => {
   return (
     <Router>
-      <div className="min-h-screen bg-white dark:bg-gray-900 transition-colors">
+      <div className="min-h-screen bg-white dark:bg-gray-900 text-gray-900 dark:text-white transition-colors duration-300">
         <Header />
         <main>
           <Hero />
