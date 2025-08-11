@@ -33,7 +33,6 @@ const Testimonials: React.FC = () => {
           </p>
         </motion.div>
 
-// src/components/Sections/Testimonials.tsx (continued)
         <div className="max-w-4xl mx-auto">
           <div className="relative">
             <AnimatePresence mode="wait">
