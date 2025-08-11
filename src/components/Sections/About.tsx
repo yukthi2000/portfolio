@@ -6,18 +6,18 @@ import { personalInfo, skills } from '../../data/portfolio';
 
 const About: React.FC = () => {
   const skillCategories = {
+    programming: skills.filter(skill => skill.category === 'programming'),
     frontend: skills.filter(skill => skill.category === 'frontend'),
     backend: skills.filter(skill => skill.category === 'backend'),
     tools: skills.filter(skill => skill.category === 'tools'),
-    other: skills.filter(skill => skill.category === 'other'),
+    'Databases & Cloud': skills.filter(skill => skill.category === 'Databases & Cloud'),
   };
-
   const SkillBar: React.FC<{ skill: typeof skills[0] }> = ({ skill }) => (
     <motion.div
       initial={{ opacity: 0, x: -20 }}
       whileInView={{ opacity: 1, x: 0 }}
       viewport={{ once: true }}
-      className="mb-4"
+      className="mb-5"
     >
       <div className="flex justify-between mb-2">
         <span className="text-gray-700 dark:text-gray-300 font-medium">
@@ -30,10 +30,9 @@ const About: React.FC = () => {
       <div className="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-2">
         <motion.div
           initial={{ width: 0 }}
-          whileInView={{ width: `${skill.level}%` }}
-          viewport={{ once: true }}
-          transition={{ duration: 1, delay: 0.2 }}
-          className="bg-primary-600 h-2 rounded-full"
+          animate={{ width: `${skill.level}%` }}
+          transition={{ duration: 1 }}
+          className="dark:bg-gray-200 bg-gray-700 h-2 rounded-full"
         />
       </div>
     </motion.div>
@@ -62,7 +61,7 @@ const About: React.FC = () => {
           >
             <div className="relative">
               <img
-                src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=500&h=500&fit=crop&crop=face"
+                src="src\assets\DSC07376.jpg"
                 alt={personalInfo.name}
                 className="w-full max-w-md mx-auto rounded-2xl shadow-2xl"
               />
@@ -123,7 +122,7 @@ const About: React.FC = () => {
             Skills & Technologies
           </h3>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid md:grid-cols-2 lg:grid-cols-5 gap-5">
             {Object.entries(skillCategories).map(([category, categorySkills]) => (
               <div key={category} className="bg-gray-50 dark:bg-gray-800 p-6 rounded-xl">
                 <h4 className="text-xl font-semibold text-gray-800 dark:text-white mb-6 capitalize">
