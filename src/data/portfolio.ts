@@ -342,9 +342,9 @@ export const timeline: TimelineItem[] = [
     id: 'edu-uom',
     type: 'education',
     period: '2020 – Present',
-    title: 'BSc (Hons) in Information Technology — CGPA 3.64*',
+    title: 'BSc (Hons) in Information Technology — CGPA 3.7',
     organization: 'University of Moratuwa',
-    description: 'Up to Level 4 Semester 1. Coursework across software engineering, networking, and AI/ML.',
+    description: 'Coursework across software engineering, networking, and AI/ML.',
   },
   {
     id: 'edu-ccna',
