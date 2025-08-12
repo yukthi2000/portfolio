@@ -50,7 +50,7 @@ const Header: React.FC = () => {
             whileHover={{ scale: 1.05 }}
             className="text-2xl font-bold text-gray-800 dark:text-white"
           >
-            JD
+            YUKTHI
           </motion.div>
 
           {/* Desktop Navigation */}
