@@ -84,7 +84,8 @@ export const projects: Project[] = [
       'Designed and prototyped an ML‑driven fraud detection pipeline that ingests historical and live trade streams, engineers behavioral features, and flags suspicious activity for analyst review. Includes comparative modeling, evaluation dashboards, and explainability tooling.',
     techStack: ['Python', 'scikit‑learn', 'XGBoost', 'Pandas', 'NumPy', 'Streamlit'],
     images: [
-      'https://images.unsplash.com/photo-1520607162513-77705c0f0d4a?q=80&w=1600&auto=format&fit=crop',
+      'src/assets/fyp/msedge_CUjll3glpN.png',
+      'src/assets/fyp/msedge_FZfdutu9aGN1.png'
     ],
     featured: true,
     github: '',
@@ -98,35 +99,44 @@ export const projects: Project[] = [
       'Built a responsive React front‑end and Node.js API with MySQL to manage products, stock, and transactions. Implemented role‑based access, reporting, and deployment to Azure/AWS.',
     techStack: ['ReactJS', 'Node.js', 'MySQL', 'Azure'],
     images: [
-      'https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?q=80&w=1600&auto=format&fit=crop',
+      'src/assets/av/msedge_1oDgfwqCio.jpg',
+      'src/assets/av/msedge_EzjX4eAqRJ.png',
+      'src/assets/av/msedge_LlhuDXp3Ba.png'
     ],
-    liveDemo: '',
+    liveDemo: 'https://asenterprise.shop/',
     github: '',
   },
   {
-    id: 'employee-management',
-    title: 'Employee Management System',
-    description:
-      'CRUD platform to manage employee records with Spring Boot + React.',
-    longDescription:
-      'Implemented user flows for creating, updating, and listing employees with PostgreSQL persistence. Focused on clean UI/UX, API validation, and error handling.',
-    techStack: ['ReactJS', 'Spring Boot', 'PostgreSQL'],
-    images: [
-      'https://images.unsplash.com/photo-1551836022-4c4c79ecde51?q=80&w=1600&auto=format&fit=crop',
-    ],
-  },
-  {
-    id: 'travel-planner',
-    title: 'Travel Planning & Analyzing System',
-    description:
-      'Route optimization with weather forecasting and review‑based trip scoring.',
-    longDescription:
-      'Developed a planner that minimizes travel distance, aggregates weather insights, and computes overall trip scores from user reviews to support informed decisions.',
-    techStack: ['ReactJS', 'Node.js', 'MySQL', 'AWS'],
-    images: [
-      'https://images.unsplash.com/photo-1488646953014-85cb44e25828?q=80&w=1600&auto=format&fit=crop',
-    ],
-  },
+  id: 'sirikurula-staff',
+  title: 'Sirikurula Staff Management System',
+  description:
+    'Full‑stack rental and accounts management system for a traditional clothing business.',
+  longDescription:
+    'Developed a complete business management platform to handle customers, orders, accounts, and notifications. Features include overdue payment reminders, revenue tracking, customer profiles, and order dispatch/return monitoring. Built with a responsive React front‑end, Node.js/Express backend, and deployed on Render.',
+  techStack: ['ReactJS', 'Node.js', 'Express', 'MongoDB', 'Render'],
+  images: [
+    'src/assets/siri/msedge_qNVlJox8Hi.png',
+    'src/assets/siri/msedge_PckP4ZEy2s.png',
+    'src/assets/siri/msedge_EmtgdR1Yy5.png',
+    'src/assets/siri/msedge_M4Ancm6hOr.png',
+    'src/assets/siri/msedge_qDAZdNgo4L.png',
+
+  ],
+  liveDemo: 'https://sirikirula-staff.onrender.com/',
+
+},
+  // {
+  //   id: 'travel-planner',
+  //   title: 'Travel Planning & Analyzing System',
+  //   description:
+  //     'Route optimization with weather forecasting and review‑based trip scoring.',
+  //   longDescription:
+  //     'Developed a planner that minimizes travel distance, aggregates weather insights, and computes overall trip scores from user reviews to support informed decisions.',
+  //   techStack: ['ReactJS', 'Node.js', 'MySQL', 'AWS'],
+  //   images: [
+  //     'https://images.unsplash.com/photo-1488646953014-85cb44e25828?q=80&w=1600&auto=format&fit=crop',
+  //   ],
+  // },
   {
     id: 'depression-ml',
     title: 'Depression Prediction with ML',
@@ -145,8 +155,12 @@ export const projects: Project[] = [
       'Matplotlib',
     ],
     images: [
-      'https://images.unsplash.com/photo-1521790361543-f645cf042ec4?q=80&w=1600&auto=format&fit=crop',
+      'src/assets/mental/msedge_tnd7uvaXx3.png',
+      'src/assets/mental/msedge_TGOqFPAgfC.png',
+      'src/assets/mental/msedge_QeKZDloASu.png'
     ],
+    liveDemo: 
+    'https://huggingface.co/spaces/Yukthi2000/dep'
   },
   {
     id: 'moraspirit-app',
@@ -157,7 +171,7 @@ export const projects: Project[] = [
       'Contributed to the MoraSpirit Web & Tech pillar app, enabling news, events, and social features for the university sports community.',
     techStack: ['React Native', 'Node.js'],
     images: [
-      'https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?q=80&w=1600&auto=format&fit=crop',
+      'src/assets/website_head_logo.png',
     ],
   },
   {
@@ -169,7 +183,8 @@ export const projects: Project[] = [
       'Tested REST endpoints and user flows for a library management system and OrangeHRM using Serenity BDD and Cucumber, documenting defects and acceptance criteria.',
     techStack: ['Serenity BDD', 'Cucumber'],
     images: [
-      'https://images.unsplash.com/photo-1515879218367-8466d910aaa4?q=80&w=1600&auto=format&fit=crop',
+      'src/assets/QA/idea64_90yPahxAvE.png',
+      'src/assets/QA/idea64_SsBDNO6G5U.png'
     ],
   },
 ];
@@ -238,7 +253,7 @@ export const articles: Article[] = [
     id: 'nextjs-auth-system',
     title: 'Build a Complete Authentication System with Next.js, MongoDB, Tailwind, and TypeScript',
     excerpt: 'End-to-end auth flow with signup/login, JWT via cookies, protected routes, reset password, and email verification.',
-    coverImage: 'https://images.unsplash.com/photo-1556157382-97eda2d62296?q=80&w=1600&auto=format&fit=crop',
+    coverImage: 'src/assets/medium/1_f8PyPZKtQnNWV95f4WDrOg.webp',
     publishedDate: '2024-09-15',
     readTime: '4 min read',
     url: 'https://medium.com/%40yukthihettiarachchissck/build-a-complete-authentication-system-with-next-js-mongodb-tailwind-and-typescript-a0d9cff78b2c',
@@ -247,7 +262,7 @@ export const articles: Article[] = [
     id: 'chainlit-human-feedback',
     title: 'Enable Human Feedback in Chainlit Without LITERAL API Key and Save Feedback',
     excerpt: 'Add thumbs-up/down and comment feedback to Chainlit apps using a custom data layer, no external API key required.',
-    coverImage: 'https://images.unsplash.com/photo-1555066931-4365d14bab8c?q=80&w=1600&auto=format&fit=crop',
+    coverImage: 'src/assets/medium/0_Y3Pb4DjK0w31Rnzh.webp',
     publishedDate: '2024-05-22',
     readTime: '3 min read',
     url: 'https://medium.com/%40yukthihettiarachchissck/enable-human-feedback-in-chainlit-without-literal-api-key-and-save-feedback-95bfd3a01073',
@@ -256,7 +271,7 @@ export const articles: Article[] = [
     id: 'vscode-extension',
     title: 'Let’s build an Extention for Visual Studio Code(VScode)',
     excerpt: 'Step-by-step guide to scaffold, run, and debug a VS Code extension using Yo Code and TypeScript.',
-    coverImage: 'https://images.unsplash.com/photo-1515879218367-8466d910aaa4?q=80&w=1600&auto=format&fit=crop',
+    coverImage: 'src/assets/medium/1_bQtqiqXcPEO497kBhGdvOQ.webp',
     publishedDate: '2024-03-28',
     readTime: '8 min read',
     url: 'https://medium.com/%40yukthihettiarachchissck/lets-build-an-extention-for-visual-studio-code-vscode-462a6f5c5cd3',
@@ -265,7 +280,7 @@ export const articles: Article[] = [
     id: 'huggingface-intro',
     title: 'Unlock the Power of AI: Introduction to Hugging Face',
     excerpt: 'What Hugging Face offers—Model Hub, Datasets, and Spaces—and why it matters for rapid AI prototyping.',
-    coverImage: 'https://images.unsplash.com/photo-1554475901-4538ddfbccc2?q=80&w=1600&auto=format&fit=crop',
+    coverImage: 'src/assets/medium/1_cQq3Nw2Ek4FuwhMNb-pouw.webp',
     publishedDate: '2024-02-16',
     readTime: '3 min read',
     url: 'https://medium.com/%40yukthihettiarachchissck/unlock-the-power-of-ai-introduction-to-hugging-face-e32c8c01664e',
@@ -274,7 +289,7 @@ export const articles: Article[] = [
     id: 'google-maps-react',
     title: 'Getting Started with Google Maps API in React.js',
     excerpt: 'Create a React app, add @react-google-maps/api, load maps, and render markers—with tips on API key setup.',
-    coverImage: 'https://images.unsplash.com/photo-1526778548025-fa2f459cd5c1?q=80&w=1600&auto=format&fit=crop',
+    coverImage: 'src/assets/medium/1_kM9X4ezBoxeeHkhAC-rqFA.webp',
     publishedDate: '2023-06-27',
     readTime: '3 min read',
     url: 'https://medium.com/%40yukthihettiarachchissck/getting-started-with-google-maps-api-in-react-js-1390b19d18f0',
@@ -283,7 +298,7 @@ export const articles: Article[] = [
     id: 'google-maps-api-key',
     title: 'How to Generate an API Key for Google Maps API',
     excerpt: 'Step-by-step walkthrough in Google Cloud Console to create and restrict a Maps JavaScript API key.',
-    coverImage: 'https://images.unsplash.com/photo-1462899006636-339e08d1844e?q=80&w=1600&auto=format&fit=crop',
+    coverImage: 'src/assets/medium/1_DMEPtaZPmIjdwALQSbMcaA.webp',
     publishedDate: '2023-06-27',
     readTime: '3 min read',
     url: 'https://medium.com/%40yukthihettiarachchissck/how-to-generate-an-api-key-for-google-maps-api-46b076f5e3ca',
@@ -369,13 +384,5 @@ export const timeline: TimelineItem[] = [
     title: 'ITN ESOFT IT Mastermind — Semi‑Finalist',
     organization: 'Computer Society of Sri Lanka, Esoft Metro Campus & ITN',
     description: 'Reached semi‑finals demonstrating problem‑solving and teamwork.',
-  },
-  {
-    id: 'ach-uxplore',
-    type: 'achievement',
-    period: '—',
-    title: 'Mora UXplore 1.0 — Participation',
-    organization: 'IEEE Student Branch of SLiIT (UoM)',
-    description: 'Participated in UX‑focused sessions and challenges.',
-  },
+  }
 ];
