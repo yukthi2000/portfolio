@@ -76,7 +76,6 @@ await emailjs.send(
   const socialLinks = [
     { icon: Github, href: personalInfo.social.github, label: 'GitHub' },
     { icon: Linkedin, href: personalInfo.social.linkedin, label: 'LinkedIn' },
-    { icon: Twitter, href: personalInfo.social.twitter, label: 'Twitter' },
   ];
 
   return (

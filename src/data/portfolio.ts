@@ -18,7 +18,7 @@ export const personalInfo = {
     github: 'https://github.com/yukthi2000',
     linkedin:
       'https://www.linkedin.com/in/yukthi-hettiarachchi-bb2a18150',
-    twitter: '', // add if you want it visible
+
     medium: 'https://medium.com/@yukthihettiarachchissck',
   },
 };
