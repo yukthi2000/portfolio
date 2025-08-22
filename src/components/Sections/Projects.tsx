@@ -129,7 +129,7 @@ const Projects: React.FC = () => {
         </div>
 
         {/* Project Modal */}
-        <AnimatePresence>
+        {/* <AnimatePresence>
           {selectedProject && selectedProjectData && (
             <motion.div
               initial={{ opacity: 0 }}
@@ -151,7 +151,7 @@ const Projects: React.FC = () => {
                       <img
                         src={selectedProjectData.images[currentImageIndex]}
                         alt={selectedProjectData.title}
-                        className="w-full h-64 md:h-80 object-cover"
+                        // className="w-full h-64 md:h-80 object-cover"
                       />
                       <button
                         onClick={prevImage}
@@ -210,7 +210,7 @@ const Projects: React.FC = () => {
                     </div>
                   </div>
 
-                  <div className="flex space-x-4">
+                  <div className="flex space-x-4 absolute">
                     {selectedProjectData.liveDemo && (
                       <motion.a
                         href={selectedProjectData.liveDemo}
@@ -242,7 +242,125 @@ const Projects: React.FC = () => {
               </motion.div>
             </motion.div>
           )}
-        </AnimatePresence>
+        </AnimatePresence> */}
+{/* Project Modal */}
+<AnimatePresence>
+  {selectedProject && selectedProjectData && (
+    <motion.div
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+      className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 p-4"
+      onClick={() => setSelectedProject(null)}
+    >
+      <motion.div
+        initial={{ scale: 0.9, opacity: 0 }}
+        animate={{ scale: 1, opacity: 1 }}
+        exit={{ scale: 0.9, opacity: 0 }}
+        className="relative bg-white dark:bg-gray-900 rounded-xl max-w-4xl w-full max-h-[90vh] overflow-y-auto"
+        onClick={(e) => e.stopPropagation()}
+      >
+        {/* 🔹 Buttons pinned inside modal */}
+        <div className="absolute bottom-4 right-4 flex space-x-3 z-20">
+          {selectedProjectData.liveDemo && (
+            <motion.a
+              href={selectedProjectData.liveDemo}
+              target="_blank"
+              rel="noopener noreferrer"
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              className="inline-flex items-center px-4 py-2 bg-primary-600 hover:bg-primary-700 text-white rounded-lg font-medium shadow"
+            >
+              <ExternalLink size={18} className="mr-2" />
+              Live Demo
+            </motion.a>
+          )}
+          {selectedProjectData.github && (
+            <motion.a
+              href={selectedProjectData.github}
+              target="_blank"
+              rel="noopener noreferrer"
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              className="inline-flex items-center px-4 py-2 border border-gray-300 dark:border-gray-600 text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-800 rounded-lg font-medium shadow"
+            >
+              <Github size={18} className="mr-2" />
+              Code
+            </motion.a>
+          )}
+        </div>
+
+        {/* 🔹 Modal Content */}
+        <div className="relative">
+          {selectedProjectData.images.length > 1 ? (
+            <div className="relative">
+              <img
+                src={selectedProjectData.images[currentImageIndex]}
+                alt={selectedProjectData.title}
+              />
+              <button
+                onClick={prevImage}
+                className="absolute left-4 top-1/2 transform -translate-y-1/2 bg-black bg-opacity-50 text-white p-2 rounded-full hover:bg-opacity-70"
+              >
+                <ChevronLeft size={20} />
+              </button>
+              <button
+                onClick={nextImage}
+                className="absolute right-4 top-1/2 transform -translate-y-1/2 bg-black bg-opacity-50 text-white p-2 rounded-full hover:bg-opacity-70"
+              >
+                <ChevronRight size={20} />
+              </button>
+              <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-2">
+                {selectedProjectData.images.map((_, index) => (
+                  <button
+                    key={index}
+                    onClick={() => setCurrentImageIndex(index)}
+                    className={`w-2 h-2 rounded-full ${
+                      index === currentImageIndex ? 'bg-white' : 'bg-white bg-opacity-50'
+                    }`}
+                  />
+                ))}
+              </div>
+            </div>
+          ) : (
+            <img
+              src={selectedProjectData.images[0]}
+              alt={selectedProjectData.title}
+              className="w-full h-64 md:h-80 object-cover"
+            />
+          )}
+        </div>
+
+        <div className="p-6">
+          <h3 className="text-2xl font-bold text-gray-800 dark:text-white mb-4">
+            {selectedProjectData.title}
+          </h3>
+          <p className="text-gray-600 dark:text-gray-400 mb-6">
+            {selectedProjectData.longDescription}
+          </p>
+
+          <div className="mb-6">
+            <h4 className="text-lg font-semibold text-gray-800 dark:text-white mb-3">
+              Technologies Used
+            </h4>
+            <div className="flex flex-wrap gap-2">
+              {selectedProjectData.techStack.map((tech) => (
+                <span
+                  key={tech}
+                  className="px-3 py-1 bg-primary-100 dark:bg-primary-900 text-primary-600 dark:text-primary-400 rounded-full text-sm"
+                >
+                  {tech}
+                </span>
+              ))}
+            </div>
+          </div>
+        </div>
+      </motion.div>
+    </motion.div>
+  )}
+</AnimatePresence>
+
+
       </div>
     </section>
   );
