@@ -1,4 +1,4 @@
-// src/data/portfolio.ts
+// public/data/portfolio.ts
 // Personalized data for Yukthi Hettiarachchi
 
 export const personalInfo = {
@@ -84,8 +84,8 @@ export const projects: Project[] = [
       'Designed and prototyped an ML‑driven fraud detection pipeline that ingests historical and live trade streams, engineers behavioral features, and flags suspicious activity for analyst review. Includes comparative modeling, evaluation dashboards, and explainability tooling.',
     techStack: ['Python', 'scikit‑learn', 'XGBoost', 'Pandas', 'NumPy', 'Streamlit'],
     images: [
-      'src/assets/fyp/msedge_CUjll3glpN.png',
-      'src/assets/fyp/msedge_FZfdutu9aGN1.png'
+      '/assets/fyp/msedge_CUjll3glpN.png',
+      '/assets/fyp/msedge_FZfdutu9aGN1.png'
     ],
     featured: true,
     github: '',
@@ -99,9 +99,9 @@ export const projects: Project[] = [
       'Built a responsive React front‑end and Node.js API with MySQL to manage products, stock, and transactions. Implemented role‑based access, reporting, and deployment to Azure/AWS.',
     techStack: ['ReactJS', 'Node.js', 'MySQL', 'Azure'],
     images: [
-      'src/assets/av/msedge_1oDgfwqCio.jpg',
-      'src/assets/av/msedge_EzjX4eAqRJ.png',
-      'src/assets/av/msedge_LlhuDXp3Ba.png'
+      '/assets/av/msedge_1oDgfwqCio.jpg',
+      '/assets/av/msedge_EzjX4eAqRJ.png',
+      '/assets/av/msedge_LlhuDXp3Ba.png'
     ],
     liveDemo: 'https://asenterprise.shop/',
     github: '',
@@ -115,11 +115,11 @@ export const projects: Project[] = [
     'Developed a complete business management platform to handle customers, orders, accounts, and notifications. Features include overdue payment reminders, revenue tracking, customer profiles, and order dispatch/return monitoring. Built with a responsive React front‑end, Node.js/Express backend, and deployed on Render.',
   techStack: ['ReactJS', 'Node.js', 'Express', 'MongoDB', 'Render'],
   images: [
-    'src/assets/siri/msedge_qNVlJox8Hi.png',
-    'src/assets/siri/msedge_PckP4ZEy2s.png',
-    'src/assets/siri/msedge_EmtgdR1Yy5.png',
-    'src/assets/siri/msedge_M4Ancm6hOr.png',
-    'src/assets/siri/msedge_qDAZdNgo4L.png',
+    '/assets/siri/msedge_qNVlJox8Hi.png',
+    '/assets/siri/msedge_PckP4ZEy2s.png',
+    '/assets/siri/msedge_EmtgdR1Yy5.png',
+    '/assets/siri/msedge_M4Ancm6hOr.png',
+    '/assets/siri/msedge_qDAZdNgo4L.png',
 
   ],
   liveDemo: 'https://sirikirula-staff.onrender.com/',
@@ -155,9 +155,9 @@ export const projects: Project[] = [
       'Matplotlib',
     ],
     images: [
-      'src/assets/mental/msedge_tnd7uvaXx3.png',
-      'src/assets/mental/msedge_TGOqFPAgfC.png',
-      'src/assets/mental/msedge_QeKZDloASu.png'
+      '/assets/mental/msedge_tnd7uvaXx3.png',
+      '/assets/mental/msedge_TGOqFPAgfC.png',
+      '/assets/mental/msedge_QeKZDloASu.png'
     ],
     liveDemo: 
     'https://huggingface.co/spaces/Yukthi2000/dep'
@@ -171,7 +171,7 @@ export const projects: Project[] = [
       'Contributed to the MoraSpirit Web & Tech pillar app, enabling news, events, and social features for the university sports community.',
     techStack: ['React Native', 'Node.js'],
     images: [
-      'src/assets/website_head_logo.png',
+      '/assets/website_head_logo.png',
     ],
   },
   {
@@ -183,8 +183,8 @@ export const projects: Project[] = [
       'Tested REST endpoints and user flows for a library management system and OrangeHRM using Serenity BDD and Cucumber, documenting defects and acceptance criteria.',
     techStack: ['Serenity BDD', 'Cucumber'],
     images: [
-      'src/assets/QA/idea64_90yPahxAvE.png',
-      'src/assets/QA/idea64_SsBDNO6G5U.png'
+      '/assets/QA/idea64_90yPahxAvE.png',
+      '/assets/QA/idea64_SsBDNO6G5U.png'
     ],
   },
 ];
@@ -253,7 +253,7 @@ export const articles: Article[] = [
     id: 'nextjs-auth-system',
     title: 'Build a Complete Authentication System with Next.js, MongoDB, Tailwind, and TypeScript',
     excerpt: 'End-to-end auth flow with signup/login, JWT via cookies, protected routes, reset password, and email verification.',
-    coverImage: 'src/assets/medium/1_f8PyPZKtQnNWV95f4WDrOg.webp',
+    coverImage: '/assets/medium/1_f8PyPZKtQnNWV95f4WDrOg.webp',
     publishedDate: '2024-09-15',
     readTime: '4 min read',
     url: 'https://medium.com/%40yukthihettiarachchissck/build-a-complete-authentication-system-with-next-js-mongodb-tailwind-and-typescript-a0d9cff78b2c',
@@ -262,7 +262,7 @@ export const articles: Article[] = [
     id: 'chainlit-human-feedback',
     title: 'Enable Human Feedback in Chainlit Without LITERAL API Key and Save Feedback',
     excerpt: 'Add thumbs-up/down and comment feedback to Chainlit apps using a custom data layer, no external API key required.',
-    coverImage: 'src/assets/medium/0_Y3Pb4DjK0w31Rnzh.webp',
+    coverImage: '/assets/medium/0_Y3Pb4DjK0w31Rnzh.webp',
     publishedDate: '2024-05-22',
     readTime: '3 min read',
     url: 'https://medium.com/%40yukthihettiarachchissck/enable-human-feedback-in-chainlit-without-literal-api-key-and-save-feedback-95bfd3a01073',
@@ -271,7 +271,7 @@ export const articles: Article[] = [
     id: 'vscode-extension',
     title: 'Let’s build an Extention for Visual Studio Code(VScode)',
     excerpt: 'Step-by-step guide to scaffold, run, and debug a VS Code extension using Yo Code and TypeScript.',
-    coverImage: 'src/assets/medium/1_bQtqiqXcPEO497kBhGdvOQ.webp',
+    coverImage: '/assets/medium/1_bQtqiqXcPEO497kBhGdvOQ.webp',
     publishedDate: '2024-03-28',
     readTime: '8 min read',
     url: 'https://medium.com/%40yukthihettiarachchissck/lets-build-an-extention-for-visual-studio-code-vscode-462a6f5c5cd3',
@@ -280,7 +280,7 @@ export const articles: Article[] = [
     id: 'huggingface-intro',
     title: 'Unlock the Power of AI: Introduction to Hugging Face',
     excerpt: 'What Hugging Face offers—Model Hub, Datasets, and Spaces—and why it matters for rapid AI prototyping.',
-    coverImage: 'src/assets/medium/1_cQq3Nw2Ek4FuwhMNb-pouw.webp',
+    coverImage: '/assets/medium/1_cQq3Nw2Ek4FuwhMNb-pouw.webp',
     publishedDate: '2024-02-16',
     readTime: '3 min read',
     url: 'https://medium.com/%40yukthihettiarachchissck/unlock-the-power-of-ai-introduction-to-hugging-face-e32c8c01664e',
@@ -289,7 +289,7 @@ export const articles: Article[] = [
     id: 'google-maps-react',
     title: 'Getting Started with Google Maps API in React.js',
     excerpt: 'Create a React app, add @react-google-maps/api, load maps, and render markers—with tips on API key setup.',
-    coverImage: 'src/assets/medium/1_kM9X4ezBoxeeHkhAC-rqFA.webp',
+    coverImage: '/assets/medium/1_kM9X4ezBoxeeHkhAC-rqFA.webp',
     publishedDate: '2023-06-27',
     readTime: '3 min read',
     url: 'https://medium.com/%40yukthihettiarachchissck/getting-started-with-google-maps-api-in-react-js-1390b19d18f0',
@@ -298,7 +298,7 @@ export const articles: Article[] = [
     id: 'google-maps-api-key',
     title: 'How to Generate an API Key for Google Maps API',
     excerpt: 'Step-by-step walkthrough in Google Cloud Console to create and restrict a Maps JavaScript API key.',
-    coverImage: 'src/assets/medium/1_DMEPtaZPmIjdwALQSbMcaA.webp',
+    coverImage: '/assets/medium/1_DMEPtaZPmIjdwALQSbMcaA.webp',
     publishedDate: '2023-06-27',
     readTime: '3 min read',
     url: 'https://medium.com/%40yukthihettiarachchissck/how-to-generate-an-api-key-for-google-maps-api-46b076f5e3ca',
@@ -318,7 +318,7 @@ export const testimonials: Testimonial[] = [
   {
     content:
       "I had the pleasure of working with Yukthi during his internship, where he contributed to multiple projects in Rust, Kubernetes, Machine learning and VSCode plugin development. He demonstrated a strong grasp of complex concepts and consistently exceeded my expectations with minimal guidance. I am confident that Yukthi will be a valuable asset to any team he joins in the future, and I highly recommend him for roles in Software engineering or Machine learning.",
-    avatar: "src/assets/chirath.jfif", // place chirath.jfif in public/images/testimonials
+    avatar: "/assets/chirath.jfif", // place chirath.jfif in /images/testimonials
     name: "Chirath Bandara Dasanayaka",
     role: "Specialist Engineer - Machine Learning",
     company: "LSEG (London Stock Exchange Group)",
@@ -326,7 +326,7 @@ export const testimonials: Testimonial[] = [
   {
     content:
       "Yukthi, an exceptional undergraduate from the University of Moratuwa, is making waves in the world of software development. During our collaboration on an industrial project, I witnessed firsthand Yukthi's extraordinary talent and drive, which propelled him to become a key member of the development team. From the outset, it was evident that Yukthi possessed a unique ability to understand complex business ideas and transform them into practical technical solutions. His dedication and enthusiasm were palpable as he actively contributed to shaping the project's initial technical details. Yukthi's analytical prowess and attention to detail ensured that our solutions consistently met the exact requirements, making him an invaluable asset. His passion for learning and adaptability allowed him to quickly grasp new technologies and apply them effectively. His collaborative nature and effective communication skills made him a true team player, actively engaging in discussions, offering valuable insights, and supporting his teammates.",
-    avatar: "src/assets/prasad.jfif", // place prasad.jfif in public/images/testimonials
+    avatar: "/assets/prasad.jfif", // place prasad.jfif in /images/testimonials
     name: "Prasad Srimal",
     role: "Lead Software Engineer",
     company: "Brand Finance",

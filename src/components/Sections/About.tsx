@@ -61,7 +61,7 @@ const About: React.FC = () => {
           >
             <div className="relative">
               <img
-                src="src\assets\DSC07376.jpg"
+                src="\assets\DSC07376.jpg"
                 alt={personalInfo.name}
                 className="w-full max-w-md mx-auto rounded-2xl shadow-2xl"
               />
