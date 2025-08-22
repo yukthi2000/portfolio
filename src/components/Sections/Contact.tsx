@@ -1,7 +1,7 @@
 // src/components/Sections/Contact.tsx
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import { Mail, Phone, MapPin, Send, Github, Linkedin, Twitter } from 'lucide-react';
+import { Mail, Phone, MapPin, Send, Github, Linkedin } from 'lucide-react';
 import { personalInfo } from '../../data/portfolio';
 import emailjs from '@emailjs/browser';
 
