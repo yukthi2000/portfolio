@@ -17,7 +17,7 @@ const ScrollToTop: React.FC = () => {
           whileHover={{ scale: 1.1 }}
           whileTap={{ scale: 0.9 }}
           onClick={scrollToTop}
-          className="fixed bottom-8 right-8 z-50 p-3 bg-primary-600 hover:bg-primary-700 text-white rounded-full shadow-lg transition-colors"
+          className="fixed bottom-8 right-8 z-50 p-3 bg-primary-600 hover:bg-primary-700 dark:text-white text-black rounded-full shadow-lg transition-colors "
           aria-label="Scroll to top"
         >
           <ChevronUp size={24} />

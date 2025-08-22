@@ -93,8 +93,8 @@ const Testimonials: React.FC = () => {
                 onClick={() => setCurrentIndex(index)}
                 className={`w-3 h-3 rounded-full transition-colors ${
                   index === currentIndex
-                    ? 'bg-primary-600'
-                    : 'bg-gray-300 dark:bg-gray-600'
+                    ? 'bg-gray-200'
+                    : 'bg-gray-400 dark:bg-gray-600'
                 }`}
               />
             ))}

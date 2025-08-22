@@ -234,7 +234,7 @@ await emailjs.send(
                   isSubmitting
                     ? 'bg-gray-400 cursor-not-allowed'
                     : 'bg-primary-600 hover:bg-primary-700'
-                } text-white`}
+                } dark:text-white text-black`}
               >
                 {isSubmitting ? (
                   <div className="w-5 h-5 border-2 border-white border-t-transparent rounded-full animate-spin mr-2" />
