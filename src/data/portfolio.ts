@@ -5,7 +5,7 @@ export const personalInfo = {
   name: 'Yukthi Hettiarachchi',
   title: 'Undergraduate • Software Engineer • AI/ML Enthusiast',
   tagline:
-    'Passionate and adaptable team player exploring the evolving world of technology — eager to leverage ML and full‑stack skills to build useful, reliable systems.',
+    'Passionate and adaptable team player exploring the evolving world of technology, eager to leverage ML and full‑stack skills to build useful, reliable systems.',
   bio:
     `A passionate, enthusiastic undergraduate excited to embrace new opportunities and overcome obstacles. I am a responsible team player who adapts quickly to new technologies and focuses on productive targets. With a strong interest in AI/ML and software engineering, I enjoy building data‑driven and user‑centric solutions.`,
   email: 'yukthihettiarachchissck@gmail.com',
