@@ -1,6 +1,6 @@
 // src/components/Layout/Header.tsx
 import React, { useState, useEffect } from 'react';
-import { motion } from 'framer-motion';
+import { motion, AnimatePresence } from 'framer-motion';
 import { Menu, X, Sun, Moon } from 'lucide-react';
 import { useTheme } from '../../hooks/useTheme';
 
@@ -26,12 +26,82 @@ const Header: React.FC = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  const scrollToSection = (href: string) => {
-    const element = document.querySelector(href);
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
+  // Close mobile menu when clicking outside
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      const target = event.target as HTMLElement;
+      if (isMenuOpen && !target.closest('nav')) {
+        setIsMenuOpen(false);
+      }
+    };
+
+    if (isMenuOpen) {
+      document.addEventListener('click', handleClickOutside);
     }
+
+    return () => {
+      document.removeEventListener('click', handleClickOutside);
+    };
+  }, [isMenuOpen]);
+
+  // Close mobile menu on resize to desktop
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth >= 768) {
+        setIsMenuOpen(false);
+      }
+    };
+
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
+  const scrollToSection = (href: string) => {
+    // Close menu first
     setIsMenuOpen(false);
+    
+    // Add a small delay to allow menu to close, then scroll
+    setTimeout(() => {
+      const targetId = href.replace('#', '');
+      let element = document.getElementById(targetId);
+      
+      // Fallback: try to find by querySelector if getElementById fails
+      if (!element) {
+        element = document.querySelector(href);
+      }
+      
+      // Additional fallback: try to find by data-section attribute or class
+      if (!element) {
+        element = document.querySelector(`[data-section="${targetId}"]`) || 
+                  document.querySelector(`.${targetId}-section`);
+      }
+      
+      if (element) {
+        // Get header height to offset scroll position
+        const header = document.querySelector('header');
+        const headerHeight = header ? header.offsetHeight : 80;
+        
+        const elementPosition = element.getBoundingClientRect().top;
+        const offsetPosition = elementPosition + window.pageYOffset - headerHeight - 20;
+        
+        window.scrollTo({
+          top: offsetPosition,
+          behavior: 'smooth'
+        });
+      } else {
+        console.warn(`Element with selector "${href}" not found`);
+        // Fallback: try scrolling by estimated positions
+        const sections = ['home', 'about', 'projects', 'publications', 'timeline', 'contact'];
+        const index = sections.indexOf(targetId);
+        if (index !== -1) {
+          const estimatedPosition = index * window.innerHeight * 0.8;
+          window.scrollTo({
+            top: estimatedPosition,
+            behavior: 'smooth'
+          });
+        }
+      }
+    }, 300); // Wait for menu close animation
   };
 
   return (
@@ -90,36 +160,57 @@ const Header: React.FC = () => {
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
               onClick={() => setIsMenuOpen(!isMenuOpen)}
-              className="p-2 rounded-lg bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-300"
+              className="p-2 rounded-lg bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-300 relative z-10"
             >
-              {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
+              <AnimatePresence mode="wait" initial={false}>
+                <motion.div
+                  key={isMenuOpen ? 'close' : 'open'}
+                  initial={{ opacity: 0, rotate: -180 }}
+                  animate={{ opacity: 1, rotate: 0 }}
+                  exit={{ opacity: 0, rotate: 180 }}
+                  transition={{ duration: 0.2 }}
+                >
+                  {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
+                </motion.div>
+              </AnimatePresence>
             </motion.button>
           </div>
         </div>
 
         {/* Mobile Navigation */}
-        <motion.div
-          initial={{ opacity: 0, height: 0 }}
-          animate={{
-            opacity: isMenuOpen ? 1 : 0,
-            height: isMenuOpen ? 'auto' : 0,
-          }}
-          className="md:hidden overflow-hidden"
-        >
-          <div className="py-4 space-y-4">
-            {navItems.map((item) => (
-              <motion.button
-                key={item.name}
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                onClick={() => scrollToSection(item.href)}
-                className="block w-full text-left text-gray-600 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 transition-colors"
-              >
-                {item.name}
-              </motion.button>
-            ))}
-          </div>
-        </motion.div>
+        <AnimatePresence>
+          {isMenuOpen && (
+            <motion.div
+              initial={{ opacity: 0, height: 0 }}
+              animate={{ opacity: 1, height: "auto" }}
+              exit={{ opacity: 0, height: 0 }}
+              transition={{ duration: 0.3, ease: "easeInOut" }}
+              className="md:hidden overflow-hidden bg-white/95 dark:bg-gray-900/95 backdrop-blur-md rounded-lg mt-4 shadow-lg border border-gray-200 dark:border-gray-700"
+            >
+              <div className="py-4 space-y-2">
+                {navItems.map((item, index) => (
+                  <motion.button
+                    key={item.name}
+                    initial={{ opacity: 0, x: -20 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    transition={{ delay: index * 0.1 }}
+                    whileHover={{ scale: 1.02, backgroundColor: "rgba(0,0,0,0.05)" }}
+                    whileTap={{ scale: 0.98 }}
+                    onClick={(e) => {
+                      e.preventDefault();
+                      e.stopPropagation();
+                      console.log(`Clicking ${item.name} -> ${item.href}`);
+                      scrollToSection(item.href);
+                    }}
+                    className="block w-full text-left px-6 py-3 text-gray-600 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 transition-colors rounded-lg"
+                  >
+                    {item.name}
+                  </motion.button>
+                ))}
+              </div>
+            </motion.div>
+          )}
+        </AnimatePresence>
       </nav>
     </motion.header>
   );
