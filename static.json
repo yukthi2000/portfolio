@@ -2,8 +2,8 @@
   "root": "dist",
   "routes": [
     {
-      "path": "/(.*)",
-      "dest": "/index.html"
+      "path": "/*",
+      "dest": "index.html"
     }
   ]
 }
