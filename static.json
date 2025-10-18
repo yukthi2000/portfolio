@@ -1,0 +1,9 @@
+{
+  "root": "dist",
+  "routes": [
+    {
+      "path": "/(.*)",
+      "dest": "/index.html"
+    }
+  ]
+}
