@@ -1,7 +1,8 @@
 // src/components/Layout/Footer.tsx
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import { Github, Linkedin, Mail, FileText } from 'lucide-react';
+import { Github, Linkedin, Mail, FileText, User } from 'lucide-react';
 import { personalInfo } from '../../data/portfolio';
 
 const Footer: React.FC = () => {
@@ -61,6 +62,15 @@ const Footer: React.FC = () => {
           viewport={{ once: true }}
           className="mt-8 pt-8 border-t border-gray-200 dark:border-gray-700 text-center"
         >
+          <div className="flex flex-col items-center gap-4 mb-4">
+            <Link
+              to="/me"
+              className="inline-flex items-center gap-2 px-6 py-2 bg-gradient-to-r from-purple-600 to-pink-600 text-white rounded-full hover:shadow-lg transition-shadow font-medium"
+            >
+              <User size={18} />
+              View Personal Gallery
+            </Link>
+          </div>
           <p className="text-gray-600 dark:text-gray-400">
             © {currentYear} {personalInfo.name}. All rights reserved.
           </p>
