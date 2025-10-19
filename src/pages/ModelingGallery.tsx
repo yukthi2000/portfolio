@@ -74,40 +74,41 @@ const ModelingGallery: React.FC = () => {
         <link rel="canonical" href="https://yukthihettiarachchi.onrender.com/me" />
       </Helmet>
 
-      <div className="min-h-screen bg-gradient-to-br from-gray-50 via-white to-gray-100 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900">
-        {/* Header with Back Button */}
-        <header className="fixed top-0 left-0 right-0 z-40 bg-white/80 dark:bg-gray-900/80 backdrop-blur-md border-b border-gray-200 dark:border-gray-700">
-          <div className="container mx-auto px-4 py-4">
-            <div className="flex items-center justify-between">
-              <motion.button
-                onClick={handleBackToPortfolio}
-                className="flex items-center gap-2 px-4 py-2 text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition-colors rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800"
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-              >
-                <ArrowLeft className="w-5 h-5" />
-                <span className="font-medium">Back to Professional Portfolio</span>
-              </motion.button>
-              
-              <h1 className="text-2xl font-bold bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent">
-                Me
-              </h1>
+      <div className="dark">
+        <div className="min-h-screen bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900">
+          {/* Header with Back Button */}
+          <header className="fixed top-0 left-0 right-0 z-40 bg-gray-900/80 backdrop-blur-md border-b border-gray-700">
+            <div className="container mx-auto px-4 py-4">
+              <div className="flex items-center justify-between">
+                <motion.button
+                  onClick={handleBackToPortfolio}
+                  className="flex items-center gap-2 px-4 py-2 text-gray-300 hover:text-white transition-colors rounded-lg hover:bg-gray-800"
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                >
+                  <ArrowLeft className="w-5 h-5" />
+                  <span className="font-medium">Back to Professional Portfolio</span>
+                </motion.button>
+                
+                <h1 className="text-2xl font-bold bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">
+                  Me
+                </h1>
+              </div>
             </div>
-          </div>
-        </header>
+          </header>
 
-        {/* Main Gallery Content */}
-        <main className="container mx-auto px-4 pt-24 pb-16">
+          {/* Main Gallery Content */}
+          <main className="container mx-auto px-4 pt-24 pb-16">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
             className="text-center mb-12"
           >
-            <h2 className="text-4xl md:text-5xl font-bold mb-4 text-gray-900 dark:text-white">
+            <h2 className="text-4xl md:text-5xl font-bold mb-4 text-white">
               Yukthi Hettiarachchi
             </h2>
-            <p className="text-xl text-gray-600 dark:text-gray-400">
+            <p className="text-xl text-gray-400">
               Personal Gallery
             </p>
           </motion.div>
@@ -129,7 +130,7 @@ const ModelingGallery: React.FC = () => {
                 onClick={() => setSelectedImage(image)}
                 whileHover={{ scale: 1.03 }}
               >
-                <div className="aspect-[3/4] relative bg-gray-200 dark:bg-gray-700">
+                <div className="aspect-[3/4] relative bg-gray-700">
                   <img
                     src={image.src}
                     alt={image.alt}
@@ -153,7 +154,7 @@ const ModelingGallery: React.FC = () => {
           {/* Empty State if no images */}
           {images.length === 0 && (
             <div className="text-center py-20">
-              <p className="text-xl text-gray-500 dark:text-gray-400">
+              <p className="text-xl text-gray-400">
                 Gallery images coming soon...
               </p>
             </div>
@@ -191,13 +192,14 @@ const ModelingGallery: React.FC = () => {
         </AnimatePresence>
 
         {/* Footer */}
-        <footer className="border-t border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-900 py-8">
+        <footer className="border-t border-gray-700 bg-gray-900 py-8">
           <div className="container mx-auto px-4 text-center">
-            <p className="text-gray-600 dark:text-gray-400">
+            <p className="text-gray-400">
               © 2025 Yukthi Hettiarachchi. All rights reserved.
             </p>
           </div>
         </footer>
+        </div>
       </div>
     </>
   );
